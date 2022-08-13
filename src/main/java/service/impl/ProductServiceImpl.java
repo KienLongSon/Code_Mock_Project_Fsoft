@@ -1,6 +1,6 @@
 package service.impl;
 
-import com.microsoft.sqlserver.jdbc.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import dao.ProductDao;
 import dto.ProductDto;
 import mapper.ProductMapper;
