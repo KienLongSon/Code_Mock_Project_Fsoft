@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /*1 customer create 1 order, in order init list orderDetail -
@@ -10,12 +11,12 @@ public class Order {
     private String  phoneNumber;
     private String detailAddress;
     private int total;
-    private Date orderDate;
+    private LocalDate orderDate;
     private int customerId;
     private int addressId;
     private int discountId;
 
-    public Order(String name, String phoneNumber, String detailAddress, int total, Date orderDate, int customerId, int addressId, int discountId) {
+    public Order(String name, String phoneNumber, String detailAddress, int total, LocalDate orderDate, int customerId, int addressId, int discountId) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.detailAddress = detailAddress;
@@ -26,7 +27,7 @@ public class Order {
         this.discountId = discountId;
     }
 
-    public Order(int orderId, String name, String phoneNumber, String detailAddress, int total, Date orderDate, int customerId, int addressId, int discountId) {
+    public Order(int orderId, String name, String phoneNumber, String detailAddress, int total, LocalDate orderDate, int customerId, int addressId, int discountId) {
         this.orderId = orderId;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -81,11 +82,11 @@ public class Order {
         this.total = total;
     }
 
-    public Date getOrderDate() {
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 

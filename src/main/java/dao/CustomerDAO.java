@@ -8,4 +8,5 @@ public interface CustomerDAO {
     boolean save(Customer customer);
     
     List<Customer> findAll();
+    Customer findCustomerByPhoneNumber(String phoneNumber);
 }

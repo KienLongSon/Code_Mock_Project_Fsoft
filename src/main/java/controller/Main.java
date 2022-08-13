@@ -51,7 +51,7 @@ public class Main {
                     break;
                 }
                 case 3:{
-                    int subMenuOrder = subMenuOrder();
+                    int subMenuOrder = MenuOrder.getInstance().MainMenuOrder();
                     switch (subMenuOrder){
                         case 1:{
                             
@@ -119,11 +119,12 @@ public class Main {
     
     private static int subMenuOrder(){
         System.out.println("---------Order menu----------");
-        System.out.println("1. ");
-        System.out.println("2. ");
-        System.out.println("3. ");
-        System.out.println("4. ");
-        System.out.println("Enter your choose: ");
+        System.out.println(
+                "1. Create new Order:\n" +
+                "2. Search order by Name customer.\n" +
+                "3. List order by Date.\n" +
+                "4. List order by Total Money.\n" +
+                "0. Back to Main Menu Shop....");
         int chooseSubMenuOrder;
         chooseSubMenuOrder = scanner.nextInt();
         return chooseSubMenuOrder;
