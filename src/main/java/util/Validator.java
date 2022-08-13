@@ -30,5 +30,13 @@ public class Validator {
         return ValidatePostalCode();
     }
     
+    public  int ValidateInputID(){
+        int inputID = scanner.nextInt();
+        if (inputID >= 0){
+            return inputID;
+        }
+        System.out.println("Enter id > 0: ");
+        return ValidateInputID();
+    }
     
 }
