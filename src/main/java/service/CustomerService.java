@@ -10,5 +10,11 @@ public interface CustomerService {
     
     List<Customer> findAll();
     
+    String updateCustomerById(int id);
+    
+    String deleteCustomerById(int id);
+    
+    void showAllCustomer();
+    
     boolean createAddress();
 }
