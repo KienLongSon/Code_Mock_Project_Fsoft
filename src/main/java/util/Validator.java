@@ -9,7 +9,11 @@ public class Validator {
     public static Validator getInstance() {
         return instance = instance != null ? instance : new Validator();
     }
-    
+
+
+    /**
+    Validate Customer
+     */
     public String ValidatePhoneNumber(){
         String phoneNumber = scanner.nextLine();
         String reg = "^((\\+84)|0)\\d{9}$";
@@ -29,14 +33,13 @@ public class Validator {
         System.out.println("Enter postal code again: ");
         return ValidatePostalCode();
     }
-    
-    public  int ValidateInputID(){
-        int inputID = scanner.nextInt();
-        if (inputID >= 0){
-            return inputID;
-        }
-        System.out.println("Enter id > 0: ");
-        return ValidateInputID();
+
+    /** Validate Order.
+     */
+
+    public boolean validatePhoneExist(String phoneNumber){
+        return false;
     }
-    
+
+
 }
