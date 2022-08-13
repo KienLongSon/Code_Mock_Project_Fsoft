@@ -9,4 +9,6 @@ public interface CustomerService {
     boolean save(Customer customer);
     
     List<Customer> findAll();
+    
+    boolean createAddress();
 }

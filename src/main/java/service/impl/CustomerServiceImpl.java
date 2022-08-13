@@ -20,4 +20,9 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> findAll() {
         return null;
     }
+    
+    @Override
+    public boolean createAddress() {
+        return false;
+    }
 }
