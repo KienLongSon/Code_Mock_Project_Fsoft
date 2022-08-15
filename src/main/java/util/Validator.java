@@ -1,5 +1,8 @@
 package util;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Validator {
@@ -49,8 +52,15 @@ public class Validator {
     /** Validate Order.
      */
 
-    public boolean validatePhoneExist(String phoneNumber){
-        return false;
+    public boolean validateLocalDate(String date){
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try {
+            LocalDate.parse(date,dateTimeFormatter);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
 

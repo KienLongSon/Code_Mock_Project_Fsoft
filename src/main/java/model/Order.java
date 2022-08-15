@@ -10,13 +10,13 @@ public class Order {
     private String name;
     private String  phoneNumber;
     private String detailAddress;
-    private int total;
+    private Double total;
     private LocalDate orderDate;
     private int customerId;
     private int addressId;
     private int discountId;
 
-    public Order(String name, String phoneNumber, String detailAddress, int total, LocalDate orderDate, int customerId, int addressId, int discountId) {
+    public Order(String name, String phoneNumber, String detailAddress, double total, LocalDate orderDate, int customerId, int addressId, int discountId) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.detailAddress = detailAddress;
@@ -27,7 +27,7 @@ public class Order {
         this.discountId = discountId;
     }
 
-    public Order(int orderId, String name, String phoneNumber, String detailAddress, int total, LocalDate orderDate, int customerId, int addressId, int discountId) {
+    public Order(int orderId, String name, String phoneNumber, String detailAddress, double total, LocalDate orderDate, int customerId, int addressId, int discountId) {
         this.orderId = orderId;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -74,11 +74,11 @@ public class Order {
         this.detailAddress = detailAddress;
     }
 
-    public int getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 

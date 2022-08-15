@@ -3,18 +3,18 @@ package model;
 public class OrderDetail {
     private int cartId;
     private int quantity;
-    private int total;
+    private Double total;
     private int orderId;
     private int productId;
 
-    public OrderDetail(int quantity, int total, int orderId, int productId) {
+    public OrderDetail(int quantity, Double total, int orderId, int productId) {
         this.quantity = quantity;
         this.total = total;
         this.orderId = orderId;
         this.productId = productId;
     }
 
-    public OrderDetail(int cartId, int quantity, int total, int orderId, int productId) {
+    public OrderDetail(int cartId, int quantity, Double total, int orderId, int productId) {
         this.cartId = cartId;
         this.quantity = quantity;
         this.total = total;
@@ -41,11 +41,11 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
-    public int getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
@@ -64,4 +64,6 @@ public class OrderDetail {
     public void setProductId(int productId) {
         this.productId = productId;
     }
+
+
 }
