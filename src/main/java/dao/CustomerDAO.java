@@ -11,7 +11,7 @@ public interface CustomerDAO {
     List<Customer> findAll();
     Customer findCustomerByPhoneNumber(String phoneNumber);
     
-    boolean updateCustomerById(int id);
+    boolean updateCustomer(Customer customer);
     
     
     boolean saveNewAddress(Address address);

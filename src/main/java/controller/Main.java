@@ -20,12 +20,21 @@ public class Main {
                     int subMenuCustomer = subMenuCustomer();
                     switch (subMenuCustomer){
                         case 1:{
-                            
+                            boolean result = customerService.saveCustomer(customerService.create());
+                            if (result == true){
+                                System.out.println("Create a new customer successful!!");
+                            }else {
+                                System.out.println("No success");
+                            }
                             break;
                         }
                         case 2:{
-                            
+                            System.out.println(customerService.updateCustomerById());
                             break;
+                        }
+                        case 3: {
+                            System.out.println("List of customers: ");
+                            customerService.showAllCustomer();
                         }
                         default: break;
                     }
@@ -95,10 +104,10 @@ public class Main {
     
     private static int subMenuCustomer(){
         System.out.println("---------Customer menu----------");
-        System.out.println("1. ");
-        System.out.println("2. ");
-        System.out.println("3. ");
-        System.out.println("4. ");
+        System.out.println("1. Add a new customer");
+        System.out.println("2. Update a customer by id");
+        System.out.println("3. Show all customers");
+        System.out.println("4. Exit");
         System.out.println("Enter your choose: ");
         int chooseSubMenuCustomer;
         chooseSubMenuCustomer = scanner.nextInt();

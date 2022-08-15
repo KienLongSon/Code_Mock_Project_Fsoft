@@ -80,11 +80,23 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
     
     @Override
-    public boolean updateCustomerById(int id) {
+    public boolean updateCustomer(Customer customer) {
         try (Connection connection = DBUtil.getInstance().getConnection()) {
-            String sql = "UPDATE ";
+            
+            String sql = "UPDATE CUSTOMER SET FULL_NAME = '" + customer.getFullName()
+                    +"' , EMAIL = '" + customer.getEmail()
+                    +"' , PHONE_NUMBER = '" + customer.getPhoneNumber()
+                    +"' , ADDRESS_ID = " + customer.getAddressId()
+                    +" WHERE CUSTOMER_ID = " + customer.getCustomerId();
+            
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            if (resultSet.next()){
+                return true;
+            }
         }catch (Exception e){
             e.printStackTrace();
+            return false;
         }
         return false;
     }

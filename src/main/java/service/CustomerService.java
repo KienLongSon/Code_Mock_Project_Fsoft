@@ -11,7 +11,7 @@ public interface CustomerService {
     
     List<Customer> findAll();
     
-    String updateCustomerById(int id);
+    String updateCustomerById();
     
     
     void showAllCustomer();

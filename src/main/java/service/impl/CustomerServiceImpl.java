@@ -22,18 +22,6 @@ public class CustomerServiceImpl implements CustomerService {
             System.out.println("No customer yet!!");
         }else {
             Customer customer = new Customer();
-            System.out.println("Enter customer id: ");
-            int customerId = scanner.nextInt();
-            scanner.nextLine();
-            List<Customer> customerFilter =customers.stream()
-                    .filter(customer1 -> Objects.equals(customer1.getCustomerId(), customerId))
-                    .collect(Collectors.toList());
-            if (customerFilter.size()==0){
-                customer.setCustomerId(customerId);
-                System.out.println("Enter customer full name: ");
-                customer.setFullName(scanner.nextLine());
-                System.out.println("Enter customer email: ");
-                customer.setEmail(Validator.getInstance().ValidateEmail());
                 System.out.println("Enter customer phone number: ");
                 String phoneNumber = Validator.getInstance().ValidatePhoneNumber();
                 if(customerDAO.findCustomerByPhoneNumber(phoneNumber) != null){
@@ -41,6 +29,10 @@ public class CustomerServiceImpl implements CustomerService {
                     return create();
                 }else {
                     customer.setPhoneNumber(phoneNumber);
+                    System.out.println("Enter customer full name: ");
+                    customer.setFullName(scanner.nextLine());
+                    System.out.println("Enter customer email: ");
+                    customer.setEmail(Validator.getInstance().ValidateEmail());
                     System.out.println("Enter address postal code: ");
                     String postalCode = scanner.nextLine();
                     Address address = new Address();
@@ -63,12 +55,8 @@ public class CustomerServiceImpl implements CustomerService {
                     }
                     
                 }
-            } else {
-                System.out.println("Customer id is existed, please enter again! ");
-                return create();
             }
-        }
-        return null;
+        return create();
     }
     
     @Override
@@ -83,8 +71,24 @@ public class CustomerServiceImpl implements CustomerService {
     }
     
     @Override
-    public String updateCustomerById(int id) {
-        return null;
+    public String updateCustomerById() {
+        System.out.println("Enter customer id need to update: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        List<Customer> customers = findAll();
+        Customer customer = new Customer();
+        for (Customer customer1: customers) {
+            if (customer1.getCustomerId() == id){
+                customer = customer1;
+                break;
+            }
+        }
+        if (customerDAO.updateCustomer(customer)){
+            return "Update successful";
+        }else {
+            return "Update not successful";
+        }
+        
     }
     
     
