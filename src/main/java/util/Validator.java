@@ -24,6 +24,18 @@ public class Validator {
         return ValidatePhoneNumber();
     }
     
+    public String ValidateEmail(){
+        String email = scanner.nextLine();
+        String reg = "^(.+)@(\\S+) $";
+        if (email.matches(reg)){
+            return email;
+        }
+        System.out.println("Enter email again: ");
+        return ValidateEmail();
+    }
+    /**
+     Validate Address
+     */
     public String ValidatePostalCode(){
         String postalCode = scanner.nextLine();
         String reg = "^\\d{6}$";
